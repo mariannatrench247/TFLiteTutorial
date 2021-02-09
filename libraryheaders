@@ -1,0 +1,58 @@
+//Headers for TFLite Microcontrollers library. 
+
+//Include following: 
+
+#include "tensorflow/lite/micro/all_ops_resolver.h"
+#include "tensorflow/lite/micro/micro_error_reporter.h"
+#include "tensorflow/lite/micro/micro_interpreter.h"
+#include "tensorflow/lite/schema/schema_generated.h"
+#include "tensorflow/lite/version/version."
+
+//all_ops_resolver.h --> provides the ops used by interpreter to run model
+//micro_error_reporter.h --> outputs debug info
+//micro_interpreter.h  --> contains code to load/run models
+//schema_generated.h --> schema for TFLite [FlatBuffer] model file format
+//version.h   --> provides versioning info for TF lite schema 
+
+
+// INCLUDE MODEL HEADER AS WELL 
+// TFLITE (microcontrollers) interpreter expects model 2B provided as C++ array 
+      // model defined in model.h & model.cc files 
+     
+     // IE:
+              #include "tensorflow/lite/micro/examples/hello_world/model.h"
+              
+
+
+//INCLUDE UNIT TEST FRAMEWORK HEADER 
+    //To creare unit test, include TFLITE(microcontrollers) unit test framework 
+        
+        // IE:
+                #include "tensorflow/lite/micro/testing/micro_test.h"
+                
+                    // The test is defined using the following macros:
+
+
+                           TF_LITE_MICRO_TESTS_BEGIN
+
+                           TF_LITE_MICRO_TEST(LoadModelAndPerformInference) {
+                              . // add code here
+                              .
+                           }
+
+                           TF_LITE_MICRO_TESTS_END
+                           
+                           
+                           
+// SET UP LOGGING
+      // tflite::ErrorReporter pointer created 
+      // using pointer to a tflite::MicroErrorReporter
+      
+        //   IE
+              tflite::MicroErrorReporter micro_error_reporter;
+              tflite::ErrorReporter* error_reporter = &micro_error_reporter;
+     
+     
+     ^^^^^ variable passed into interpreter : allows to write logs ^^^^^
+          ^^^   (micros) have a variety of mechanisms for logging. ^^^
+              ^^ implementing tflite::MicroErrorReporter designed for particular (micro). ^^
