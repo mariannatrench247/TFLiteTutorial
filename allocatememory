@@ -1,0 +1,52 @@
+//running inference on (micro) & mobile CHALLENGE
+//resource constraints 
+//work with limited hardware under power constraints
+
+      //IE: 
+            Intermediate Tensors 
+               //typically pre-allocated --> REDUCES INFERENCE LATENCY @ COST OF EMMORY SPACE
+                //sometimes these intermediate tensors can take up more mem space than the model
+                
+              // DATA DEPENDENCY ANALYSIS 
+                  //intermediate tensors don't have to co-exist in memory
+                  //reusing memory buffers of intermediate tensors 
+             // APPROXIMATION ALGORITHMS 
+                // variety, perform differently depending on model and properties of memory buffers
+                
+            // TENSOR USAGE RECORDS 
+                // of Intermediate Tensor 
+                    //auxiliary data structure contains info about size of tensor 
+                      //used first and last in execution plan of network 
+             /// MEMORY  MANAGER 
+                  // computes intermediate tensor usages @ any moment in network execution and 
+                    // optimizes runtime memory for SMALLEST FOOTPRINT 
+                    
+                    
+         // Shared Memory Buffer Objects
+               // TFLITE GPU OpenGL backend 
+                  // employ GL textures for Intermediate Tensors 
+                        // Texture's size cannot be modified after creation 
+                        // only 1 shader program --> exclusive access to texture object 
+                                @ any given time
+                  
+                 ^^^^ OBJECTIVE: minimize sum of sizes all created shared memory buffer objects in object pool. ^^^^
+                          // algorithms designed to get closer to THEORETICAL LOWER BOUND 
+                                //some perform better than others 
+                       ^^ GREEDY_BY_SIZE_IMPROVED & GREEDY_BY_BREADTH ^^
+                              ^ object assignments with smallest memory footprints^
+                        
+                   
+                   
+
+//preallocate certain amount of memory: 
+    // input
+    //output
+    //intermediate arrays 
+    
+    
+   // CODE : 
+    const int tensor_arena_size = 2 * 1024;
+    uint8_t tensor_arena[tensor_arena_size];
+    
+    ^^ size required will depend on model you are using and may be determined by experimentation ^^ 
+  
