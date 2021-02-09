@@ -1,0 +1,3 @@
+// Tell interpreter to allocate memory from tensor_arena for model's tensors:
+    // interpreter.AllocateTensors();
+    
