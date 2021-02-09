@@ -1,0 +1,6 @@
+//create tflite::MicroInterpreter instance
+   // passing in previously created variables
+   
+//CODE: 
+    tflite::MicroInterpreter interpreter(model, resolver, tensor_arena,
+                                     tensor_arena_size, error_reporter);
