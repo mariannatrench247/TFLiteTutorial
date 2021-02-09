@@ -1,0 +1,19 @@
+//INCLUDE UNIT TEST FRAMEWORK HEADER 
+    //To create unit test, include TFLITE(microcontrollers) unit test framework 
+        
+        // IE:
+                #include "tensorflow/lite/micro/testing/micro_test.h"
+                
+                    // The test is defined using the following macros:
+
+
+                           TF_LITE_MICRO_TESTS_BEGIN
+
+                           TF_LITE_MICRO_TEST(LoadModelAndPerformInference) {
+                              . // add code here
+                              .
+                           }
+
+                           TF_LITE_MICRO_TESTS_END
+                           
+                           
