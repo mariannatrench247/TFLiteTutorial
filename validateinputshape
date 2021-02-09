@@ -1,0 +1,8 @@
+// MicroInterpreter instance can provide us wiht pointer to model's input tensor 
+      // via calling :     .input(0) 
+            // 0 is first and only input tensor 
+            
+         // Obtain pointer to model's input tensor 
+         
+         // CODE : 
+              TfLiteTensor* input = interpreter.input(0);
