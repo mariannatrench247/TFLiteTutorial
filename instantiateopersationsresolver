@@ -1,0 +1,14 @@
+//The AllOpsResolver loads all of the operations available in TensorFlow Lite 
+// which uses a lot of memory
+//load only operations that are needed! 
+
+
+// AllOpsResolver --> instance declared
+    //used by interpreter to access operations used by model 
+    
+    // CODE:
+    
+    tflite::AllOpsResolver
+    
+//AllOpsResolver loads all ops available in TFLITE(micro) --> lots of memory 
+// model will only use subset of ops --> RECOMMENDED ONLY LOAD OPS THAT ARE NEEDED 
