@@ -1,0 +1,12 @@
+// SET UP LOGGING
+      // tflite::ErrorReporter pointer created 
+      // using pointer to a tflite::MicroErrorReporter
+      
+        //   IE
+              tflite::MicroErrorReporter micro_error_reporter;
+              tflite::ErrorReporter* error_reporter = &micro_error_reporter;
+     
+     
+     ^^^^^ variable passed into interpreter : allows to write logs ^^^^^
+          ^^^   (micros) have a variety of mechanisms for logging. ^^^
+              ^^ implementing tflite::MicroErrorReporter designed for particular (micro). ^^
