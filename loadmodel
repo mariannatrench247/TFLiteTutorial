@@ -1,0 +1,12 @@
+//MODEL INSTANTIATED USING DATA FROM char array & g_model, declared in model.h file 
+//CHECK MODEL TO ENSURE SCHEMA VERSION COMPATIBLE WITH VERSION WE ARE USING 
+
+
+// EXAMPLE CODE : 
+        const tflite::Model* model = ::tflite::GetModel(g_model);
+        if (model->version() != TFLITE_SCHEMA_VERSION) {
+          TF_LITE_REPORT_ERROR(error_reporter,
+            "Model provided is schema version %d not equal "
+            "to supported version %d.\n",
+          model->version(), TFLITE_SCHEMA_VERSION);
+        }
