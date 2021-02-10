@@ -11,4 +11,6 @@ Read Only files for setting up TFLite from Tf Models for (micros)
 
 DAIZE ENTERPRISES 
 
-	:upside_down_face: :copyright: Marianna Belmares 
+	:upside_down_face: 
+	:copyright:
+	Marianna Belmares 
