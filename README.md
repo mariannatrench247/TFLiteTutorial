@@ -9,8 +9,8 @@ This is the route I have taken, through trial and error. I really enjoyed this p
 
 Read Only files for setting up TFLite from Tf Models for (micros) 
 
-DAIZE ENTERPRISES 
+🌼 ©️ DAIZE ENTERPRISES 
 
-	:upside_down_face: 
-	:copyright:
-	Marianna Belmares 
+
+	
+	🙃 🐼 Marianna Belmares 
